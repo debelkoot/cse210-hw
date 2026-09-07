@@ -33,6 +33,7 @@ class Program
         else if (percent >= 70)
         {
             letter = "B-";
+        }
        else if (percent >= 65)
         {
             letter = "C+";
@@ -40,6 +41,7 @@ class Program
         else if (percent >= 60)
         {
             letter = "C";
+        }
         else if (percent >= 55)
         {
             letter = "C-";
@@ -47,6 +49,7 @@ class Program
         else if (percent >= 50)
         {
             letter = "D+";
+        }
         else if (percent >= 45)
         {
             letter = "D";
@@ -54,6 +57,7 @@ class Program
         else if (percent >= 40)
         {
             letter = "D-";
+        }
         else
         {
             letter = "F";
