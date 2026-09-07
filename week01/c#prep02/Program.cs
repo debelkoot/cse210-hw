@@ -1,6 +1,6 @@
 using System;
 
-class Program
+class Program:Exercise2
 {
     static void Main(string[] args)
     {
