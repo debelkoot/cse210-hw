@@ -10,7 +10,6 @@ class Program
 
         string letter = "";
 
-        // 1. Determine core letter grade
         if (percent >= 90)
         {
             letter = "A";
@@ -31,8 +30,7 @@ class Program
         {
             letter = "F";
         }
-
-        // 2. Determine sign modifier (+ or -)
+        
         string sign = "";
         int lastDigit = percent % 10;
 
@@ -45,7 +43,6 @@ class Program
             sign = "-";
         }
 
-        // 3. Handle stretch exceptions (No A+, No F+/F-)
         if (letter == "A" && sign == "+")
         {
             sign = "";
@@ -55,7 +52,6 @@ class Program
             sign = "";
         }
 
-        // Output results
         Console.WriteLine($"Your grade is: {letter}{sign}");
 
         if (percent >= 70)
