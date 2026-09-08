@@ -10,68 +10,61 @@ class Program
 
         string letter = "";
 
-        if (percent >= 95)
-        {
-            letter = "A+";
-        }
-        else if (percent >= 90)
+        // 1. Determine core letter grade
+        if (percent >= 90)
         {
             letter = "A";
         }
-        else if (percent >= 85)
-        {
-            letter = "A-";
-        }
         else if (percent >= 80)
-        {
-            letter = "B+";
-        }
-        else if (percent >= 75)
         {
             letter = "B";
         }
         else if (percent >= 70)
         {
-            letter = "B-";
-        }
-       else if (percent >= 65)
-        {
-            letter = "C+";
+            letter = "C";
         }
         else if (percent >= 60)
         {
-            letter = "C";
-        }
-        else if (percent >= 55)
-        {
-            letter = "C-";
-        }
-        else if (percent >= 50)
-        {
-            letter = "D+";
-        }
-        else if (percent >= 45)
-        {
             letter = "D";
-        }
-        else if (percent >= 40)
-        {
-            letter = "D-";
         }
         else
         {
             letter = "F";
         }
 
-        Console.WriteLine($"Your grade is: {letter}");
-        
+        // 2. Determine sign modifier (+ or -)
+        string sign = "";
+        int lastDigit = percent % 10;
+
+        if (lastDigit >= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit < 3)
+        {
+            sign = "-";
+        }
+
+        // 3. Handle stretch exceptions (No A+, No F+/F-)
+        if (letter == "A" && sign == "+")
+        {
+            sign = "";
+        }
+        else if (letter == "F")
+        {
+            sign = "";
+        }
+
+        // Output results
+        Console.WriteLine($"Your grade is: {letter}{sign}");
+
         if (percent >= 70)
         {
-            Console.WriteLine("You passed!");
+            Console.WriteLine("Congratulations! You passed the course.");
         }
         else
         {
-            Console.WriteLine("You will try next time!");
+            Console.WriteLine("Don't give up! Keep working hard for next time.");
         }
     }
 }
