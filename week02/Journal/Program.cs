@@ -1,5 +1,5 @@
 // EXCEEDING REQUIREMENTS:
-// 1. Added custom fields to track 'Mood' and 'Activity Category' (Study, Exercise, Nature, Leadership, Spiritual) to support personal habit tracking.
+// 1. Added custom fields to track 'Mood' and Activity Category to support personal habit tracking.
 // 2. Implemented Excel-compatible CSV loading and saving, accurately handling escaped quotes and commas.
 
 using System;
