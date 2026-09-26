@@ -9,15 +9,14 @@ class Program
     {
         // EXCEEDING REQUIREMENTS:
         // 1. Multiple Scripture Library:
-        // I created more than one scripture in a list. The program randomly
+        // I created different scripture in a list. The program randomly
         // chooses one scripture when it starts, so the user can practice
         // different scriptures.
         // 2. Improved Word Selection:
-        // The program only hides words that are still visible. This prevents
-        // hiding the same word again and helps the user make progress.
+        // The program only hides words that are visible. This prevents
+        // hiding the same word again and helps the user go ahead.
         // 3. Punctuation Handling:
-        // I improved the Word class so punctuation marks remain visible when
-        // words are replaced with underscores.
+        // I improved the Word class so punctuation marks.
         // 4. User Experience:
         // I added a quit option so the user can stop the program anytime.
         List<Scripture> scriptureLibrary = new List<Scripture>();
