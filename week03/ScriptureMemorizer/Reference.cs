@@ -2,32 +2,33 @@ namespace ScriptureMemorizer;
 
 class Reference
 {
-    private string book;
-    private int chapter;
-    private int startVerse;
-    private int endVerse;
-
+    private string _book;
+    private int _chapter;
+    private int _startVerse;
+    private int _endVerse;
     public Reference(string book, int chapter, int verse)
     {
-        this.book = book;
-        this.chapter = chapter;
-        this.startVerse = verse;
-        this.endVerse = verse;
+        _book = book;
+        _chapter = chapter;
+        _startVerse = verse;
+        _endVerse = verse;
     }
-
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        this.book = book;
-        this.chapter = chapter;
-        this.startVerse = startVerse;
-        this.endVerse = endVerse;
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
     }
-
     public string GetDisplayText()
     {
-        if (startVerse == endVerse)
-            return $"{book} {chapter}:{startVerse}";
-
-        return $"{book} {chapter}:{startVerse}-{endVerse}";
+        if (_startVerse == _endVerse)
+        {
+            return $"{_book} {_chapter}:{_startVerse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+        }
     }
 }
