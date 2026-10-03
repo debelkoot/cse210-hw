@@ -10,6 +10,7 @@ namespace YouTubeVideos
         private string _author;
         private int _lengthInSeconds;
         private List<Comment> _comments;
+
         // Creates a video and starts with an empty comment list.
         public Video(string title, string author, int lengthInSeconds)
         {
@@ -18,16 +19,19 @@ namespace YouTubeVideos
             _lengthInSeconds = lengthInSeconds;
             _comments = new List<Comment>();
         }
+
         // Adds a new comment to the video.
         public void AddComment(Comment comment)
         {
             _comments.Add(comment);
         }
+
         // Returns the number of comments currently stored for the video.
         public int GetNumberOfComments()
         {
             return _comments.Count;
         }
+
         // Displays all video information and related comments.
         public void DisplayVideoInfo()
         {
