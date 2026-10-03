@@ -1,58 +1,107 @@
 using System;
+using System.Collections.Generic;
 
-class Program
+namespace YouTubeVideos
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
-    }
-}
-    {
-        List<Video> videos = new List<Video>();
-
-        // Video 1
-        Video video1 = new Video("C# Abstraction Explained in 10 Minutes", "Code Academy", 600);
-        video1.AddComment(new Comment("Alice", "Great explanation of classes!"));
-        video1.AddComment(new Comment("Bob", "This made abstraction so easy to understand."));
-        video1.AddComment(new Comment("Charlie", "Thanks for the clear code examples!"));
-        videos.Add(video1);
-
-        // Video 2
-        Video video2 = new Video("Top 10 VS Code Shortcuts Every Developer Needs", "DevTips", 420);
-        video2.AddComment(new Comment("Diana", "The Ctrl+D trick saved me hours!"));
-        video2.AddComment(new Comment("Ethan", "Super helpful video, subscribed!"));
-        video2.AddComment(new Comment("Fiona", "I had no idea shortcut #4 existed."));
-        videos.Add(video2);
-
-        // Video 3
-        Video video3 = new Video("Build a Web App with HTML, CSS & JavaScript", "Tech With Tim", 1200);
-        video3.AddComment(new Comment("George", "Awesome project! Everything worked smoothly."));
-        video3.AddComment(new Comment("Hannah", "Can you make a part 2 with backend database integration?"));
-        video3.AddComment(new Comment("Ian", "Best tutorial I've found all week."));
-        video3.AddComment(new Comment("Julia", "Love the step-by-step breakdown."));
-        videos.Add(video3);
-
-        // Iterate through videos and display details
-        foreach (Video video in videos)
+        static void Main(string[] args)
         {
-            Console.WriteLine("==================================================");
-            Console.WriteLine($"Title:              {video.Title}");
-            Console.WriteLine($"Author:             {video.Author}");
-            Console.WriteLine($"Length (seconds):   {video.LengthInSeconds}");
-            Console.WriteLine($"Number of Comments: {video.GetCommentCount()}");
-            Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("Comments:");
+            // I created a list to store multiple YouTube videos.
+            List<Video> videos = new List<Video>();
 
-            foreach (Comment comment in video.GetComments())
+            // First video
+            Video video1 = new Video(
+                "C# Object-Oriented Programming Fundamentals",
+                "TechWithTim",
+                600);
+
+            video1.AddComment(new Comment(
+                "Alice",
+                "This explanation helped me understand abstraction and encapsulation better."));
+
+            video1.AddComment(new Comment(
+                "Bob",
+                "The examples made the class relationships easier to understand."));
+
+            video1.AddComment(new Comment(
+                "Charlie",
+                "I would like to learn more about inheritance in the next lesson."));
+
+            videos.Add(video1);
+
+
+            // Second video
+            Video video2 = new Video(
+                "Useful VS Code Extensions for C# Developers",
+                "CodeMaze",
+                450);
+
+            video2.AddComment(new Comment(
+                "David",
+                "These extensions improved my coding experience."));
+
+            video2.AddComment(new Comment(
+                "Eva",
+                "Thank you for sharing these helpful tools."));
+
+            video2.AddComment(new Comment(
+                "Frank",
+                "The explanation was simple and easy to follow."));
+
+            video2.AddComment(new Comment(
+                "Grace",
+                "I installed these extensions after watching this video."));
+
+            videos.Add(video2);
+
+
+            // Third video
+            Video video3 = new Video(
+                "Building Web Applications with ASP.NET Core",
+                "DevSolutions",
+                1200);
+
+            video3.AddComment(new Comment(
+                "Hannah",
+                "The explanation of dependency injection was very helpful."));
+
+            video3.AddComment(new Comment(
+                "Ian",
+                "This is a great tutorial for beginners."));
+
+            video3.AddComment(new Comment(
+                "Jack",
+                "I learned a lot about building web applications."));
+
+            videos.Add(video3);
+
+
+            // Fourth video
+            Video video4 = new Video(
+                "Learn Git and GitHub Basics",
+                "GitMastery",
+                1200);
+
+            video4.AddComment(new Comment(
+                "Karen",
+                "I finally understand the difference between merge and rebase."));
+
+            video4.AddComment(new Comment(
+                "Leo",
+                "The video was short and easy to understand."));
+
+            video4.AddComment(new Comment(
+                "Mia",
+                "I will use these Git skills in my future projects."));
+
+            videos.Add(video4);
+
+            // Display information for every video in the list.
+            foreach (Video video in videos)
             {
-                Console.WriteLine($"  - {comment.Name}: \"{comment.Text}\"");
+                video.DisplayVideoInfo();
             }
-
-            Console.WriteLine();
         }
     }
 }
-
-
-
-
